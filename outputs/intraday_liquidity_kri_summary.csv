@@ -1,0 +1,4 @@
+scenario,min_intraday_position,min_buffer_available,warning_intervals,breach_intervals,time_to_first_warning_min,time_to_first_breach_min,status
+base_case,34079586.1,4079586.1,9,0,135.0,,Amber
+severe_stress,3872893.75,0.0,26,17,90.0,120.0,Red
+stress_volume,28182308.48,0.0,12,5,120.0,180.0,Red
