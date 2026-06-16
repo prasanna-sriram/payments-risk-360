@@ -1,0 +1,10 @@
+metric,value
+total_transactions,50563.0
+total_fraud_transactions,563.0
+fraud_rate,0.0111
+total_rule_hits,362.0
+rule_hit_rate,0.0072
+fraud_captured_by_rules,351.0
+fraud_capture_rate,0.6234
+fraud_not_flagged_by_rules,212.0
+rule_hits_not_fraud,11.0
