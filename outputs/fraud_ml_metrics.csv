@@ -1,0 +1,6 @@
+metric,value
+roc_auc,0.9984981560283688
+average_precision,0.8960355810568119
+precision_at_0_5,0.55078125
+recall_at_0_5,1.0
+f1_at_0_5,0.7103274559193955
