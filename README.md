@@ -1,4 +1,4 @@
-# Enterprise Risk, Fraud Analytics, Credit Risk, and Liquidity Risk Framework for Canadian Payments
+# Enterprise Risk, Fraud Analytics, Credit Risk, Liquidity Risk, and AI-Driven Fraud Detection Framework for Canadian Payments
 
 ---
 
@@ -8,34 +8,36 @@
 - [Business Problem](#business-problem)
 - [Project Workstreams](#project-workstreams)
 - [Methodology](#methodology)
+- [Integrated Dashboard](#integrated-dashboard)
 - [Skills](#skills)
+- [Regulatory Alignment](#regulatory-alignment)
 - [Repository Structure](#repository-structure)
 - [Results and Business Recommendations](#results-and-business-recommendations)
+- [Project Artifacts](#project-artifacts)
 - [Next Steps](#next-steps)
 - [License](#license)
 - [Author Info](#author-info)
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
 ## Executive Summary
 
-This project simulates a second-line Enterprise Risk Management (ERM) framework for a Canadian payments network operating in a highly regulated environment. The business problem is that payment systems must remain resilient under fraud events, participant stress, and liquidity disruption, while also staying within risk appetite and meeting oversight expectations tied to prominent payment systems and retail payments supervision.
+This project simulates a second-line **Enterprise Risk Management (ERM)** framework for a Canadian payments environment operating in a highly regulated context. The core problem is that payment systems must remain resilient under fraud events, participant stress, and liquidity disruption while staying within risk appetite and aligning with regulatory and oversight expectations for payments risk management.
 
-To address this, I built a synthetic end-to-end risk analytics portfolio covering **credit risk**, **liquidity risk**, and **fraud monitoring**, supported by executive-style reporting, KRI logic, and second-line challenge documentation. The fraud module is extended with an **AI-driven logistic regression model** that assigns a transaction-level fraud risk score on top of rules-based monitoring.
-
-The solution combines Python-based risk modelling, scenario analysis, threshold monitoring, and governance-oriented reporting to show how a second-line risk function can convert complex operational and financial signals into actionable oversight.
+To address this, I built a synthetic end-to-end risk analytics portfolio covering **credit risk**, **intraday liquidity risk**, **fraud risk**, and **AI-driven fraud detection**, supported by governance-oriented reporting, KRI logic, and second-line style challenge documentation. The project combines Python-based analytics with an integrated **Power BI dashboard** built from Python-generated outputs to demonstrate how a second-line risk function can turn operational and financial signals into executive-ready oversight.
 
 At a high level, the project is designed to:
-- Assess participant / merchant risk using PD-style credit risk logic
-- Simulate liquidity sufficiency under stressed payment settlement conditions
-- Detect transaction anomalies using fraud rules and an AI-driven risk score
-- Support second-line oversight through KRIs, escalation triggers, and challenge memos
 
-With more time, this framework could be expanded into participant-level stress testing, model validation workflows, and more formal board reporting packs. Although the data is fully synthetic, the project is structured to show realistic risk thinking, strong governance framing, and practical decision support for payments stakeholders.
+- Assess participant / merchant risk using PD-style credit risk logic and concentration analysis.
+- Simulate intraday liquidity sufficiency under baseline and stressed settlement scenarios.
+- Detect transaction anomalies using fraud rules and an AI-driven fraud risk score.
+- Support second-line oversight through KRIs, escalation triggers, RCSA-style documentation, and regulatory alignment notes.
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+Although the data is fully synthetic, the project is structured to demonstrate realistic risk thinking, governance framing, and practical decision support for payments stakeholders. With real data and more time, the framework could be extended into richer stress testing, model validation, and production-grade executive reporting.
+
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -52,7 +54,7 @@ This creates a business need for more than just dashboards or point-in-time cont
 
 This project is intended to solve that problem by building a synthetic but realistic framework that shows how second-line risk can monitor financial and fraud risks, align them to risk appetite, and present them in a way that supports product, risk, and executive decision-making.
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -88,7 +90,7 @@ This portfolio is organized into four concrete workstreams that mirror how a sec
 - Score bucket view showing how fraud concentrates in high-score buckets, consistent with risk scoring practices.
 - Integration of model scores into the fraud KRI layer (e.g., max fraud score per card, combined rules + model statuses), illustrating how rules and AI can be combined in a governance-friendly framework.
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -103,7 +105,25 @@ This project uses a synthetic data strategy to simulate a Canadian payments envi
 
 The project also includes governance-oriented deliverables such as executive summaries, risk threshold logic, regulatory alignment notes, and second-line challenge memos. I chose this structure because the target role is not purely analytical; it requires the ability to combine analytics, oversight, risk appetite thinking, and executive communication.
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
+
+---
+
+## Integrated Dashboard
+
+To tie the workstreams together, I built an integrated **ERM dashboard in Power BI** using the CSV outputs from the Python workstreams.
+
+The dashboard is organized into module-level and executive-level views:
+
+- **Executive Overview:** Cross-risk snapshot of credit, liquidity, fraud, and AI fraud posture.
+- **Credit Risk Page:** PD-style risk tiers, industry concentration, and top merchant exposures.
+- **Liquidity Risk Page:** Intraday liquidity position, buffer availability, and scenario-level KRIs.
+- **Fraud Risk Page:** Rules-based fraud monitoring, rule hit rates, and top high-risk cards.
+- **AI Fraud Detection Page:** Model performance, score buckets, feature importance, and top-risk transactions.
+
+This approach reflects how second-line risk teams often combine analytical outputs with executive-ready visuals to support governance forums, Product Councils, and management decision-making.
+
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -117,25 +137,48 @@ The project also includes governance-oriented deliverables such as executive sum
 - feature-importance based explainability for model interpretation and second-line challenge
 
 ### Risk Analytics
-- Credit risk scoring and participant risk segmentation
-- Liquidity stress testing and buffer threshold analysis
-- Fraud KRI design and anomaly detection logic
+- PD-style credit risk scoring and participant / merchant segmentation
+- Concentration analysis and portfolio exposure monitoring
+- Intraday liquidity stress testing and buffer threshold analysis
+- Fraud KRI design, rule-based anomaly detection, and AI-driven fraud scoring
 - Scenario analysis and sensitivity testing
 
 ### Enterprise Risk Management
 - Risk appetite alignment
 - Key Risk Indicator (KRI) design
 - Second-line challenge and oversight framing
-- RCSA / control-thinking mindset
+- RCSA-style documentation and control thinking (Refer to RCSA Template documented in [`docs/rcsa_template,md`](docs/rcsa_template.md))
 - Escalation and governance reporting logic
+- Three Lines of Defence mapping
+
+### Dashboarding and Reporting
+- Power BI executive dashboard design and build
+- Cross-risk portfolio reporting
+- Business translation of technical outputs
+- Executive summary and governance memo writing
 
 ### Business and Communication
-- Executive summary writing
 - Business problem framing
-- Risk translation for non-technical stakeholders
+- Stakeholder communication across technical and non-technical audiences
 - Recommendation writing tied to operational and strategic decisions
+- Governance-ready presentation of risk insights
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
+
+---
+
+## Regulatory Alignment
+
+This project is intentionally framed in language that maps to key Canadian and international risk concepts:
+
+- **OSFI LAR / Basel III concepts:** buffer sufficiency, stress testing, PD-style thinking, and concentration awareness.
+- **Bank of Canada PPS standards:** intraday liquidity monitoring, same-day / intraday settlement resilience, and participant default preparedness.
+- **RPAA concepts:** operational risk and fraud risk management, documented frameworks, and monitoring expectations for payment service providers.
+- **Three Lines of Defence:** first-line ownership, second-line independent challenge, and third-line assurance.
+
+Detailed mapping is documented in [`docs/regulatory-alignment.md`](docs/regulatory_alignment.md).
+
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -151,32 +194,63 @@ payment-risk-360/
 ├── notebooks/
 ├── outputs/
 ├── dashboard/
+|   └── powerbi-design-notes.md
 ├── docs/
+│   ├── regulatory-alignment.md
+│   └── rcsa-template.md
 └── README.md
 ```
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
 ## Results and Business Recommendations
 
-This project is designed to demonstrate how second-line risk can move from reactive reporting to proactive oversight in a payments environment. Even with synthetic data, the framework helps show how credit, liquidity, and fraud indicators can be brought into a common decision model with clear thresholds, escalation triggers, and management actions.
+This project demonstrates how second-line risk can move from reactive reporting to more proactive oversight in a payments environment. Even with synthetic data, the framework shows how credit, liquidity, fraud, and AI-driven risk indicators can be brought into a common decision model with clear thresholds, escalation logic, and management actions.
 
-The expected business value of this approach includes:
-- Earlier identification of elevated participant or merchant risk
-- Better visibility into liquidity pressure under stressed settlement scenarios
-- Faster escalation of potential fraud patterns through ules, KRIs, and AI-driven fraud risk scoring
-- More structured and credible second-line challenge for product and risk stakeholders
+The business value of this approach includes:
+
+- Earlier identification of elevated participant or merchant credit risk.
+- Better visibility into intraday liquidity pressure under stressed settlement scenarios.
+- Faster escalation of potential fraud patterns through rules, KRIs, and AI-driven fraud risk scoring.
+- More structured and credible second-line challenge for product, risk, and governance stakeholders.
+- Better translation of analytical outputs into executive and committee reporting.
 
 Based on this framework, the key business recommendations are:
 
-- Build a common KRI layer across fraud, liquidity, and participant risk rather than managing each domain in isolation
-- Use scenario testing regularly to assess resilience under volume spikes, counterparty stress, and adverse fraud conditions
-- Strengthen second-line challenge by requiring documented assumptions, thresholds, and model limitations for each monitoring process
-- Translate technical risk outputs into governance-ready reporting that supports Product Council, ERM committee, and executive review
+- Build a common KRI layer across fraud, liquidity, and participant / merchant risk rather than managing each domain in isolation.
+- Use scenario testing regularly to assess resilience under volume spikes, counterparty stress, and adverse fraud conditions.
+- Strengthen second-line challenge by requiring documented assumptions, thresholds, and model limitations for each monitoring process.
+- Combine rules-based controls and explainable AI scoring for fraud rather than treating them as mutually exclusive approaches.
+- Translate technical risk outputs into governance-ready reporting that supports Product Council, ERM committee, and executive review.
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+For a more detailed project reflection, **see [`docs/project_reflection.md](docs/project_reflection.md)**
+
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
+
+---
+
+## Project Artifacts
+
+### Notebooks
+- `notebooks/credit_risk.ipynb`
+- `notebooks/intraday_liquidity.ipynb`
+- `notebooks/fraud_rules_and_kri.ipynb`
+- `notebooks/fraud_ai_model.ipynb`
+
+### Key Outputs
+- Credit risk charts and markdown report
+- Intraday liquidity charts and markdown report
+- Fraud rules charts and markdown report
+- AI fraud model metrics, feature importance, and score bucket summaries
+
+### Documentation
+- `docs/regulatory-alignment.md`
+- `docs/rcsa-template.md`
+- `dashboard/powerbi-design-notes.md`
+
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -197,8 +271,9 @@ If this project were extended further, the next logical steps would be:
 - The project uses fully synthetic data, so outputs are designed to demonstrate methodology and risk thinking rather than replicate a live production environment
 - Liquidity analysis uses LCR-inspired concepts for practical simulation, not a full prudential treasury implementation
 - Fraud and credit thresholds are illustrative and would need calibration using real operating data, historical losses, and approved risk appetite statements
+- The AI fraud model is designed for explainability and portfolio demonstration, not production deployment.
 
-[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -226,7 +301,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[Back to the Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to the Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
 
 ---
 
@@ -236,4 +311,4 @@ SOFTWARE.
 - LinkedIn - [Prasanna Sriram](https://www.linkedin.com/in/prasanna-sriram/)
 - Tableau - [Tableau Public Profile](https://public.tableau.com/app/profile/prasanna.sriram.ps)
 
-[Back to the Top](#enterprise-risk-fraud-analytics-credit-risk-and-liquidity-risk-framework-for-canadian-payments)
+[Back to the Top](#enterprise-risk-fraud-analytics-credit-risk-liquidity-risk-and-ai-driven-fraud-detection-framework-for-canadian-payments)
